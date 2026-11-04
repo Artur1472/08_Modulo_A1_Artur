@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import '../themes/dark_theme.dart';
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: darkTheme.primaryColor,
+      child: DrawerHeader(
+              child: Row(
+                children: [
+                  Row(
+                    children: [
+                      GestureDetector(
+                        child: Icon(
+                          Icons.arrow_left,
+                          color: Theme.of(context).primaryColor,
+                          size: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.person,
+                        color: Theme.of(context).primaryColor,
+                        size: 100,
+                      ),
+                    ],
+                  ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: ListTile(
+                    title: Text("Home",
+                    style: TextStyle(color: Theme.of(context).primaryColor)),
+                    onTap: () => Navigator.pop(context),
+                  ),
+                ),
+                    ],
+              ),
+            ),
+      
+    );
+  }
+}
